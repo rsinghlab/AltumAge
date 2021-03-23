@@ -11,6 +11,6 @@ The instructions to use DeepAge are as follows:
 
 (3) Scale the data using scikit-learn StandardScaler() object in "scaler.pkl".
 
-(4) Load DeepAge from the "altum_age_keras" folder into tensorflow.
+(4) Load DeepAge from the "deep_age_keras" folder into tensorflow.
 
 (5) Use the predict function of the model with the normalized beta values to obtain the predicted age.
