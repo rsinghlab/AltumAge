@@ -3,7 +3,7 @@
 
 The summary files are CSVs containing detailed information regarding the performance of AltumAge and Horvath's 2013 model by data set.
 
-The instructions to use DeepAge are as follows:
+The instructions to use AltumAge are as follows:
 
 (1) From your Illumina 27k or 450k data, select the 21368 CpG sites from the file "CpGsites.csv" in the correct order.
 
@@ -11,6 +11,6 @@ The instructions to use DeepAge are as follows:
 
 (3) Scale the data using scikit-learn StandardScaler() object in "scaler.pkl".
 
-(4) Load DeepAge from the "deep_age_keras" folder into tensorflow.
+(4) Load AltumAge from the "deep_age_keras" folder into tensorflow.
 
 (5) Use the predict function of the model with the normalized beta values to obtain the predicted age.
