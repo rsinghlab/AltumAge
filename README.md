@@ -8,7 +8,7 @@ The main instructions to use AltumAge are as follows:
 
 (1) From your Illumina 27k or 450k array data, select the 21368 CpG sites from the file "CpGsites.csv" in the correct order.
 
-(2) Normalize the beta values using BMIQCalibration in R from "Horvath, S. DNA methylation age of human tissues and cell types. Genome Biol 14, 3156 (2013). https://doi.org/10.1186/gb-2013-14-10-r115".
+(2) Normalize the beta values using BMIQCalibration in R from "Horvath, S. DNA methylation age of human tissues and cell types." Genome Biol 14, 3156 (2013). https://doi.org/10.1186/gb-2013-14-10-r115.
 
 (3) Scale the data using scikit-learn StandardScaler() object in "scaler.pkl".
 
