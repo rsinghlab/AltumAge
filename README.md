@@ -10,7 +10,7 @@ The main instructions to use AltumAge are as follows:
 
 #### (1) Load required python packages:
 
-The following packages must be installed. As of note, the model was trained with tensorflow 2.4.0, so beware of possible compatibility issues with other versions.
+The following packages must be installed. As of note, the model was trained with ```tensorflow``` 2.4.0, so beware of possible compatibility issues with other versions.
 
 ```python
 import tensorflow as tf
@@ -41,13 +41,13 @@ Load the scaler, which transforms the distribution of beta values of each CpG si
 scaler = pd.read_pickle('example_dependencies/scaler.pkl')
 ```
 
-Finally, load AltumAge. There are two similar ways of reading the model. The first, which works with arm64 SoCs, is simply using the AltumAge folder contained in this GitHub repository.
+Finally, load ```AltumAge```. There are two similar ways of reading the model. The first, which works with arm64 SoCs, is simply using the ```AltumAge``` folder contained in this GitHub repository.
 
 ```python
 AltumAge = tf.keras.models.load_model('AltumAge')
 ```
 
-However, it may not work with x86 processors. In that case, load the .h5 file.
+However, it may not work with x86 processors. In that case, load the ```AltumAge.h5``` file.
 
 ```python
 AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
@@ -63,7 +63,7 @@ methylation_data_scaled = scaler.transform(methylation_data)
 
 #### (4) Age prediction:
 
-Finally, to predict age, simply use the following. The .flatten() command might be needed to transform the output into a 1D array.
+Finally, to predict age, simply use the following. The ```.flatten()``` command might be needed to transform the output into a 1D array.
 
 ```python
 pred_age_AltumAge = AltumAge.predict(methylation_data_scaled).flatten()
