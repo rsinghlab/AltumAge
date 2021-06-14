@@ -78,7 +78,7 @@ The summary files are CSVs containing detailed information regarding the perform
 
 ## Data availability
 
-
+To access the raw data and metadata from Array Express and Gene Expression Omnibus (GEO) or the organized, non-normalized methylation data, please access our Google Drive [here](https://drive.google.com/drive/folders/1RH2JYmhOmsScaj_WMQfVwYjubkNTh5Oq?usp=sharing_eip&ts=60c67fb4).
 
 ## Citation
 
