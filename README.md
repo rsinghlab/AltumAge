@@ -44,18 +44,12 @@ scaler = pd.read_pickle('example_dependencies/scaler.pkl')
 Finally, load ```AltumAge```. There are two similar ways of reading the model. The first, which works with arm64 SoCs, is simply using the ```AltumAge``` folder contained in this GitHub repository.
 
 ```python
-AltumAge = tf.keras.models.load_model('AltumAge')
-```
-
-However, it may not work with x86 processors. In that case, load the ```AltumAge.h5``` file.
-
-```python
-AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
+AltumAge = tf.keras.models.load_model('AltumAge.h5')
 ```
 
 #### (3) Scale the methylation data:
 
-Scale the beta values of each CpG so that mean = 0 and variance = 1.
+Scale the beta values of each CpG with sklearn robust scaler.
 
 ```python
 methylation_data_scaled = scaler.transform(methylation_data)
@@ -74,7 +68,7 @@ Voilà!
 
 ## Supplementary Results
 
-The summary files are CSVs containing detailed information regarding the performance of AltumAge and Horvath's 2013 model by data set in the test set and cancer set.
+The summary files are CSVs containing detailed information regarding the performance of AltumAge and Horvath's 2013 model by data set in the test set.
 
 ## Data availability
 
