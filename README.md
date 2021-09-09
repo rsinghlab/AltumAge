@@ -80,3 +80,18 @@ To cite our study, please use the following:
 
 Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: Improving epigenetic clock performance and interpretation with deep learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
 
+BibTex citation:
+```
+@article {de Lima Camillo2021.06.01.446559,
+	author = {de Lima Camillo, Lucas Paulo and Lapierre, Louis R and Singh, Ritambhara},
+	title = {Improving epigenetic clock performance and interpretation with deep learning},
+	elocation-id = {2021.06.01.446559},
+	year = {2021},
+	doi = {10.1101/2021.06.01.446559},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2021/08/31/2021.06.01.446559},
+	eprint = {https://www.biorxiv.org/content/early/2021/08/31/2021.06.01.446559.full.pdf},
+	journal = {bioRxiv}
+}
+```
+
