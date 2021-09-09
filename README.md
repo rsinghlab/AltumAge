@@ -44,7 +44,7 @@ scaler = pd.read_pickle('example_dependencies/scaler.pkl')
 Finally, load ```AltumAge```. There are two similar ways of reading the model. The first, which works with arm64 SoCs, is simply using the ```AltumAge``` folder contained in this GitHub repository.
 
 ```python
-AltumAge = tf.keras.models.load_model('AltumAge.h5')
+AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
 ```
 
 #### (3) Scale the methylation data:
