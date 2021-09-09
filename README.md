@@ -78,5 +78,5 @@ To access the raw data and metadata from Array Express and Gene Expression Omnib
 
 To cite our study, please use the following:
 
-Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: A Pan-Tissue DNA-Methylation Epigenetic Clock Based on Deep Learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
+Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: Improving epigenetic clock performance and interpretation with deep learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
 
