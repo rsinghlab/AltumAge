@@ -1,6 +1,6 @@
 # AltumAge
 
-AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the pre-print of the paper, please click [here](https://www.biorxiv.org/content/10.1101/2021.06.01.446559v2).
+AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the pre-print of the paper, please click [here](https://www.biorxiv.org/content/10.1101/2021.06.01.446559v5).
 
 ## Usage
 
@@ -78,13 +78,13 @@ To access the raw data and metadata from Array Express and Gene Expression Omnib
 
 To cite our study, please use the following:
 
-Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: Improving epigenetic clock performance and interpretation with deep learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
+Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: A Pan-Tissue DNA-Methylation Epigenetic Clock Based on Deep Learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
 
 BibTex citation:
 ```
 @article {de Lima Camillo2021.06.01.446559,
 	author = {de Lima Camillo, Lucas Paulo and Lapierre, Louis R and Singh, Ritambhara},
-	title = {Improving epigenetic clock performance and interpretation with deep learning},
+	title = {AltumAge: A Pan-Tissue DNA-Methylation Epigenetic Clock Based on Deep Learning},
 	elocation-id = {2021.06.01.446559},
 	year = {2021},
 	doi = {10.1101/2021.06.01.446559},
