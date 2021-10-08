@@ -95,7 +95,7 @@ BibTex citation:
 }
 ```
 
-## Copyright
+## License
 
 Copyright 2021, Brown University, Providence, RI.
 
