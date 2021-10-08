@@ -95,9 +95,11 @@ BibTex citation:
 }
 ```
 
+## Copyright
+
 Copyright 2021, Brown University, Providence, RI.
 
-                        All Rights Reserved
+All Rights Reserved
 
 Permission to use, copy, modify, and distribute this software and
 its documentation for any purpose other than its incorporation into a
