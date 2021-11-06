@@ -10,7 +10,7 @@ The main instructions to use AltumAge are as follows:
 
 #### (1) Load required python packages:
 
-The following packages must be installed. As of note, the model was trained with ```tensorflow``` 2.4.0, so beware of possible compatibility issues with other versions.
+The following packages must be installed. As of note, the model was trained with ```tensorflow``` 2.5.0, so beware of possible compatibility issues with other versions.
 
 ```python
 import tensorflow as tf
@@ -21,10 +21,10 @@ from sklearn import linear_model, preprocessing
 
 #### (2) Load list of CpGs, methylation data, scaler, and AltumAge model:
 
-From your Illumina 27k or 450k array data, select the 21368 CpG sites from the file "CpGsites.csv" in the correct order.
+From your Illumina 27k, 450k or EPIC array data, select the 20318 CpG sites from the file "CpGsites.csv" in the correct order.
 
 ```python
-cpgs = pd.read_csv('example_dependencies/CpGsites.csv').iloc[:,1]
+cpgs = np.array(pd.read_pickle('example_dependencies/multi_platform_cpgs.pkl'))
 ```
 
 Load the BMIQCalibration-normalized methylation data. It is crucial that the methylation beta values are normalized according to BMIQCalibration in R from "Horvath, S. DNA methylation age of human tissues and cell types." Genome Biol 14, 3156 (2013). [https://doi.org/10.1186/gb-2013-14-10-r115](https://doi.org/10.1186/gb-2013-14-10-r115). Moreover, reading the pickled example data only works in python version >= 3.8.
@@ -41,7 +41,7 @@ Load the scaler, which transforms the distribution of beta values of each CpG si
 scaler = pd.read_pickle('example_dependencies/scaler.pkl')
 ```
 
-Finally, load ```AltumAge```. There are two similar ways of reading the model. The first, which works with arm64 SoCs, is simply using the ```AltumAge``` folder contained in this GitHub repository.
+Finally, load ```AltumAge```:
 
 ```python
 AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
