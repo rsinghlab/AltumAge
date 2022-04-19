@@ -1,6 +1,6 @@
 # AltumAge
 
-AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the pre-print of the paper, please click [here](https://www.biorxiv.org/content/10.1101/2021.06.01.446559v5).
+AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the link to our paper published in npj Aging, please click [here](https://www.nature.com/articles/s41514-022-00085-y).
 
 ## Usage
 
@@ -78,20 +78,19 @@ To access the raw data and metadata from Array Express and Gene Expression Omnib
 
 To cite our study, please use the following:
 
-Lucas Paulo de Lima Camillo, Louis R Lapierre, Ritambhara Singh. AltumAge: A Pan-Tissue DNA-Methylation Epigenetic Clock Based on Deep Learning. bioRxiv 2021.06.01.446559; doi: [https://doi.org/10.1101/2021.06.01.446559](https://doi.org/10.1101/2021.06.01.446559)
+de Lima Camillo, L.P., Lapierre, L.R. & Singh, R. A pan-tissue DNA-methylation epigenetic clock based on deep learning. npj Aging 8, 4 (2022). [https://doi.org/10.1038/s41514-022-00085-y](https://doi.org/10.1038/s41514-022-00085-y)
 
 BibTex citation:
 ```
-@article {de Lima Camillo2021.06.01.446559,
+@article {de_Lima_Camillo_AltumAge,
 	author = {de Lima Camillo, Lucas Paulo and Lapierre, Louis R and Singh, Ritambhara},
-	title = {AltumAge: A Pan-Tissue DNA-Methylation Epigenetic Clock Based on Deep Learning},
-	elocation-id = {2021.06.01.446559},
-	year = {2021},
-	doi = {10.1101/2021.06.01.446559},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2021/08/31/2021.06.01.446559},
-	eprint = {https://www.biorxiv.org/content/early/2021/08/31/2021.06.01.446559.full.pdf},
-	journal = {bioRxiv}
+	title = {A pan-tissue DNA-methylation epigenetic clock based on deep learning},
+	year = {2022},
+	doi = {10.1038/s41514-022-00085-y},
+	publisher = {Springer Nature},
+	URL = {https://doi.org/10.1038/s41514-022-00085-y},
+	eprint = {https://www.nature.com/articles/s41514-022-00085-y.pdf},
+	journal = {npj Aging}
 }
 ```
 
