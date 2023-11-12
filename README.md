@@ -2,6 +2,10 @@
 
 AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the link to our paper published in npj Aging, please click [here](https://www.nature.com/articles/s41514-022-00085-y).
 
+## [New] Update 12/11/2023
+
+AltumAge's h5 tensorflow model has been converted to the latest PyTorch 2.1 version. To use, just ```torch.load``` the AltumAge.pt file under the dependencies folder. Follow all of the preprocessing steps and just use the loaded model as usual. 
+
 ## Usage
 
 In order to use AltumAge for age prediction, please follow the steps in example.ipynb. The example file also contains simple instructions to use Horvath's 2013 model for ease of comparison.
