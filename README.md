@@ -4,7 +4,7 @@ AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning
 
 ## [New] AltumAge is available on pyaging
 
-The easiest way to use AltumAge with your methylation data is through [pyaging](https://github.com/rsinghlab/pyaging), our newly release aging clock package. It is avaiable on PyPi and can easily be installed via ```pip install pyaging```. The tutorial for DNA methylation age prediction is available [here](https://pyaging.readthedocs.io/en/latest/tutorial_dnam.html).
+The easiest way to use AltumAge with your methylation data is through [pyaging](https://github.com/rsinghlab/pyaging), our newly-released aging clock package. It is available on PyPi and can easily be installed via ```pip install pyaging```. The tutorial for DNA methylation age prediction is available [here](https://pyaging.readthedocs.io/).
 
 ## Usage
 
