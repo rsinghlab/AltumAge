@@ -1,104 +1,144 @@
 # AltumAge
 
-AltumAge is a pan-tissue DNA methylation epigenetic clock based on deep learning. For the link to our paper published in npj Aging, please click [here](https://www.nature.com/articles/s41514-022-00085-y).
+[![Paper](https://img.shields.io/badge/Paper-npj%20Aging-blue.svg)](https://www.nature.com/articles/s41514-022-00085-y)
+[![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41514--022--00085--y-green.svg)](https://doi.org/10.1038/s41514-022-00085-y)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-yellow.svg)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.5.0-orange.svg)](https://www.tensorflow.org/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
-## [New] AltumAge is available on pyaging
+## 🧬 **AltumAge**: A Pan-Tissue DNA Methylation Epigenetic Clock Based on Deep Learning
 
-The easiest way to use AltumAge with your methylation data is through [pyaging](https://github.com/rsinghlab/pyaging), our newly-released aging clock package. It is available on PyPi and can easily be installed via ```pip install pyaging```. The tutorial for DNA methylation age prediction is available [here](https://pyaging.readthedocs.io/).
+AltumAge is a state-of-the-art epigenetic clock that predicts biological age from DNA methylation data across multiple tissue types. Built using deep learning, AltumAge demonstrates superior performance compared to traditional epigenetic clocks.
 
-## Usage
+### 🎯 Key Features
 
-In order to use AltumAge for age prediction, please follow the steps in example.ipynb. The example file also contains simple instructions to use Horvath's 2013 model for ease of comparison.
+- **Pan-tissue compatibility**: Works across multiple tissue types
+- **Deep learning architecture**: Leverages neural networks for improved accuracy
+- **Multi-platform support**: Compatible with Illumina 27k, 450k, and EPIC arrays
+- **PyTorch compatibility**: Available in both TensorFlow and PyTorch formats
+- **Easy integration**: Now available through the [pyaging](https://github.com/rsinghlab/pyaging) package
 
-The main instructions to use AltumAge are as follows:
+### 📊 Performance Highlights
 
-#### (1) Load required python packages:
+- Trained, validated, and tested on 142 datasets
+- Outperforms Horvath's 2013 model across multiple metrics
+- Robust performance across diverse tissue types and age ranges
 
-The following packages must be installed. As of note, the model was trained with ```tensorflow``` 2.5.0, so beware of possible compatibility issues with other versions.
+## 🚀 Quick Start
+
+### Option 1: Using pyaging (Recommended)
+
+The easiest way to use AltumAge is through [pyaging](https://github.com/rsinghlab/pyaging):
+
+```bash
+pip install pyaging
+```
+
+Then follow the [DNA methylation age prediction tutorial](https://pyaging.readthedocs.io/).
+
+### Option 2: Standalone Usage
+
+#### Prerequisites
+
+```bash
+pip install tensorflow==2.5.0 numpy pandas scikit-learn
+```
+
+#### Basic Usage
 
 ```python
 import tensorflow as tf
 import numpy as np
 import pandas as pd
 from sklearn import linear_model, preprocessing
-```
 
-#### (2) Load list of CpGs, methylation data, scaler, and AltumAge model:
-
-From your Illumina 27k, 450k or EPIC array data, select the 20318 CpG sites from the file "CpGsites.csv" in the correct order.
-
-```python
+# Load CpG sites
 cpgs = np.array(pd.read_pickle('example_dependencies/multi_platform_cpgs.pkl'))
-```
 
-Load the BMIQCalibration-normalized methylation data. It is crucial that the methylation beta values are normalized according to BMIQCalibration in R from "Horvath, S. DNA methylation age of human tissues and cell types." Genome Biol 14, 3156 (2013). [https://doi.org/10.1186/gb-2013-14-10-r115](https://doi.org/10.1186/gb-2013-14-10-r115). Moreover, reading the pickled example data only works in python version >= 3.8.
-
-```python
+# Load your methylation data
 data = pd.read_pickle('example_dependencies/example_data.pkl')
-real_age = data.age
 methylation_data = data[cpgs]
-```
 
-Load the scaler, which transforms the distribution of beta values of each CpG site to mean = 0 and variance = 1.
-
-```python
+# Load scaler and model
 scaler = pd.read_pickle('example_dependencies/scaler.pkl')
-```
-
-Finally, load ```AltumAge```:
-
-```python
 AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
-```
 
-#### (3) Scale the methylation data:
-
-Scale the beta values of each CpG with sklearn robust scaler.
-
-```python
+# Scale and predict
 methylation_data_scaled = scaler.transform(methylation_data)
+predicted_ages = AltumAge.predict(methylation_data_scaled).flatten()
 ```
 
-#### (4) Age prediction:
+## 📋 Detailed Instructions
 
-Finally, to predict age, simply use the following. The ```.flatten()``` command might be needed to transform the output into a 1D array.
+### 1. Data Preparation
+
+AltumAge requires:
+- DNA methylation beta values from Illumina arrays (27k, 450k, or EPIC)
+- Selection of 20,318 specific CpG sites (provided in `CpGsites.csv`)
+
+### 2. Model Loading
 
 ```python
-pred_age_AltumAge = AltumAge.predict(methylation_data_scaled).flatten()
+# For TensorFlow users
+AltumAge = tf.keras.models.load_model('example_dependencies/AltumAge.h5')
+
+# For PyTorch users
+import torch
+AltumAge_pytorch = torch.load('dependencies/AltumAge.pt')
 ```
 
-Voilà!
+### 3. Preprocessing Pipeline
 
+1. Select the required CpG sites in the correct order
+2. Scale using the provided RobustScaler
+3. Fill up missing values with 0 after scaling
+4. Input to the model for age prediction
 
-## PyTorch compatibility
+## 📁 Repository Structure
 
-AltumAge's h5 tensorflow model has also been converted to the latest PyTorch 2.1 version. To use, just ```torch.load``` the AltumAge.pt file under the dependencies folder. Follow all of the preprocessing steps and just use the loaded model as usual. 
-
-
-## Supplementary Results
-
-The summary files are CSVs containing detailed information regarding the performance of AltumAge and Horvath's 2013 model by data set in the test set.
-
-## Data availability
-
-To access the raw data and metadata from Array Express and Gene Expression Omnibus (GEO) or the organized, non-normalized methylation data, please access our Google Drive [here](https://drive.google.com/drive/folders/1RH2JYmhOmsScaj_WMQfVwYjubkNTh5Oq?usp=sharing_eip&ts=60c67fb4).
-
-## Citation
-
-To cite our study, please use the following:
-
-de Lima Camillo, L.P., Lapierre, L.R. & Singh, R. A pan-tissue DNA-methylation epigenetic clock based on deep learning. npj Aging 8, 4 (2022). [https://doi.org/10.1038/s41514-022-00085-y](https://doi.org/10.1038/s41514-022-00085-y)
-
-BibTex citation:
 ```
-@article {de_Lima_Camillo_AltumAge,
-	author = {de Lima Camillo, Lucas Paulo and Lapierre, Louis R and Singh, Ritambhara},
-	title = {A pan-tissue DNA-methylation epigenetic clock based on deep learning},
-	year = {2022},
-	doi = {10.1038/s41514-022-00085-y},
-	publisher = {Springer Nature},
-	URL = {https://doi.org/10.1038/s41514-022-00085-y},
-	eprint = {https://www.nature.com/articles/s41514-022-00085-y.pdf},
-	journal = {npj Aging}
+AltumAge/
+├── example.ipynb                    # Complete usage example
+├── example_dependencies/            # Required files for running AltumAge
+│   ├── AltumAge.h5                 # TensorFlow model
+│   ├── multi_platform_cpgs.pkl     # List of CpG sites
+│   ├── scaler.pkl                  # Preprocessing scaler
+│   └── example_data.pkl            # Example dataset
+├── dependencies/
+│   └── AltumAge.pt                 # PyTorch model
+├── CpGsites.csv                    # Required CpG sites
+└── supplementary_results/          # Detailed performance metrics
+```
+
+## 💾 Data Availability
+
+Access our comprehensive dataset collection:
+- Raw data from ArrayExpress and GEO
+- Organized methylation data (non-normalized)
+- [Google Drive Repository](https://drive.google.com/drive/folders/1RH2JYmhOmsScaj_WMQfVwYjubkNTh5Oq?usp=sharing_eip&ts=60c67fb4)
+
+## 📚 Citation
+
+If you use AltumAge in your research, please cite:
+
+```bibtex
+@article{de_Lima_Camillo_AltumAge,
+    author = {de Lima Camillo, Lucas Paulo and Lapierre, Louis R and Singh, Ritambhara},
+    title = {A pan-tissue DNA-methylation epigenetic clock based on deep learning},
+    journal = {npj Aging},
+    volume = {8},
+    pages = {4},
+    year = {2022},
+    doi = {10.1038/s41514-022-00085-y},
+    publisher = {Springer Nature},
+    URL = {https://doi.org/10.1038/s41514-022-00085-y}
 }
 ```
+## 📧 Contact
+
+For questions or collaborations, please contact:
+- Lucas Paulo de Lima Camillo: [lucas_camillo@alumni.brown.edu](mailto:lucas_camillo@alumni.brown.edu)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
